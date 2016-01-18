@@ -1,0 +1,17 @@
+table{
+	margin: 80 20 20 20;
+}
+table th{ color: royalblue;
+	font-size: Arial Black, Gadget, sans-serif;
+	font-size: 22px;
+
+}
+h2{
+	font-size: 30px;
+	font-family: Impact, Charcoal, sans-serif;
+	text-align: center;
+}
+
+.album img{
+	margin: 0 20 0 20;
+}

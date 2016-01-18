@@ -1,0 +1,33 @@
+/*body{
+	background-color: grey;
+	font-family: "Baskerville";
+}
+p {
+	background-color: grey;
+	font-family: "Baskerville";
+}*/
+.niceParagraph, span { /* multiple selectores, separados por comas, aplicaremos los estilos a los distintos elementos*/
+	background-color: grey;
+	font-family: Baskerville;
+}
+#finalParagraph {
+  background-color: steelblue;
+  font-family: Baskerville;
+}
+footer p{      /*Selectores relacionados, esta regla afecta  a las etiquetas p dentro de footer*/
+	background-color: black;
+}
+header{
+	background-color: #000000;
+	color: red;
+	font-family: Hoefler Text,Baskerville Old Face,Garamond,Times New Roman,serif;	
+	font-size: 30px;
+}
+article{
+	font-family: Futura,Trebuchet MS,Arial,sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;
+}

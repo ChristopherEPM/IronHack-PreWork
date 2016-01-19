@@ -1,0 +1,101 @@
+body {
+	background-color: #6F0F11;
+	font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+h1, h2, h3, h4, h5{
+	margin: 0px;
+	padding: 0px;
+	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans serif;
+	color: #FC0006;
+}
+
+p{
+	margin: 10px;
+}
+
+header {
+	width: 100%;
+	height: 100px;
+	color: white;
+	background-color: black;
+	font-size: 40px;
+	text-align: center;
+	padding-top: 10px;
+}
+
+
+article{
+	width: 1000px;
+	height: 1000px;
+	margin: 0 auto;
+	padding: 0px;
+	background-color: #2D2D2D;
+}
+
+aside ul li{
+	display: inline;
+	list-style-type: none;
+	padding-right: 60px;
+}
+
+img{
+	width: 440px;
+	height: 600px;
+	margin: 0px;
+	padding: 0px;
+}
+
+footer {
+	margin: auto;
+	width: 100%;
+	height: 100px;
+	color: blue;
+	background-color: black;
+	color: darkred;
+	text-align: center;
+}
+
+#photo {
+	float: left;
+	width: 440px;
+	height: 600px;
+	margin: 20px;
+	padding: 10px;
+	background-color: #6F0F11;
+}
+img{
+	border-top-left-radius: 6%;
+	border-top-right-radius: 6%;
+}
+
+#resume {
+	float: left;
+	font-size: 16px;
+	width: 440px;
+	height: 600px;
+	margin: 20px;
+	padding: 10px;
+	background-color: black;
+	color: white;
+}
+
+#description{
+	float: left;
+	width: 940px;
+	height: 300px;
+	margin: 0 20px;
+	padding: 0 10px;
+	font-size: 15px;
+	background-color: black;
+	color: white;
+}
+
+a, a:visited{
+	color:white;
+}
+a:hover{
+	color: #FB0008;
+	text-decoration: none;
+}

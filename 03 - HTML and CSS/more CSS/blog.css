@@ -1,0 +1,90 @@
+/*body{
+	background-color: grey;
+	font-family: "Baskerville";
+}
+p {
+	background-color: grey;
+	font-family: "Baskerville";
+}*/
+.niceParagraph, span { /* multiple selectores, separados por comas, aplicaremos los estilos a los distintos elementos*/
+	background-color: grey;
+	font-family: Baskerville;
+}
+#finalParagraph {
+  background-color: steelblue;
+  font-family: Baskerville;
+}
+footer{
+	background-color: #444444;
+	padding: 30px 10px;
+	border-top: 5px solid white;
+	color: white;
+	font-size: 10px;
+	font-style: italic;
+	width: 100%;
+}
+footer p{      /*Selectores relacionados, esta regla afecta  a las etiquetas p dentro de footer*/
+	background-color: black;
+}
+header {
+	font-family: Cambria, Georgia, serif;
+	font-size: 40px;
+	text-align: center;
+}
+
+article{
+	font-family: Futura,Trebuchet MS,Arial,sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;
+}
+/*-- MORE CSS -- */
+.articleContainer {
+  background-color: #FFFFFF;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+.postAuthor {
+  font-size: 20px;
+}
+header:hover {
+    background-color: #50A412;
+}
+a:link {
+  color: #13357C;
+}
+
+a:visited {
+` color: #CCCCCC;
+}
+
+a:hover {
+  color: #999999;
+}
+footer a:link {
+  color: #FFFFFF;
+}
+
+footer a:visited {
+` color: #CCCCCC;
+}
+
+footer a:hover {
+  color: #999999;
+}
+
+.floatedBox {
+    float: left;
+}
+
+.shadowedBox { /* VENDOR PREFIX - see "caniuse.com*/
+  -webkit-box-shadow:10px 5px 5px #888888;
+  -moz-box-shadow:10px 5px 5px #888888;
+  box-shadow:10px 5px 5px #888888;
+}
+

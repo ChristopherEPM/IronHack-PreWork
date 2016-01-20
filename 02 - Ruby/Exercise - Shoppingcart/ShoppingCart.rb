@@ -6,10 +6,10 @@ class ShoppingCart
     	@total_cart_price = 0
 	end
 
-	def add_item(item,cantidad,precio) #Add your item to @items
+	def add_item(item) #Add your item to @items
     	@items.push(item)
-    	@total_cart_items += cantidad
-    	@total_cart_price += precio
+    	@total_cart_items += item.unit
+    	@total_cart_price += item.total_price
 	end
 
 	def cart_price
@@ -30,6 +30,7 @@ class ShoppingCart
 end
 
 class Item 
+	attr_reader :total_price, :unit 
 	def initialize(name, price, unit)
     	@name = name
     	@price = price
@@ -38,7 +39,7 @@ class Item
  	end
 
 	def price
-    	puts "#{@name} - This item, dont have a discount, sorry"
+    	puts "#{@name} - This item dont have any discount, sorry"
 	end
 
 	def print_total_price_item
@@ -98,11 +99,11 @@ anchoas = Item.new("Anchovies",3,2)
 anchoas.print_total_price_item
 anchoas.price
 puts "------------------------"
-joshs_cart.add_item(platano,platano.get_unit,platano.get_total_price)
-joshs_cart.add_item(aspiradora,aspiradora.get_unit,aspiradora.get_total_price)
-joshs_cart.add_item(zumo,zumo.get_unit,zumo.get_total_price)
-joshs_cart.add_item(arroz,arroz.get_unit,arroz.get_total_price)
-joshs_cart.add_item(anchoas,anchoas.get_unit,anchoas.get_total_price)
+joshs_cart.add_item(platano)
+joshs_cart.add_item(aspiradora)
+joshs_cart.add_item(zumo)
+joshs_cart.add_item(arroz)
+joshs_cart.add_item(anchoas)
 joshs_cart.print_total_cart_items
 joshs_cart.print_total_cart_price
 joshs_cart.cart_price

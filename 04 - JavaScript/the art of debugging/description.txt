@@ -1,0 +1,77 @@
+The Art of Debugging
+
+To debug is to trace failing programs in order to detect problems in the source code that lead to misbehaviours. To detect a bug we need a test case, i.e. a repetitive failing case with specific steps to reproduce. Once we have a failing case, with controlled initial conditions, we can run the program instruction by instruction and inspect how the state changes.
+
+Modern browsers provide us with developer tools for inspecting and testing our code. We have already used the Chrome inspector to manipulate the HTML and CSS of a page. There are also tools for inspecting memory and running programs step by step. These tools are called debuggers. Across this course we will use the Chrome debugger to find some bugs.
+
+The Chrome debugger
+
+Download the debugging exercise files.
+
+Start by opening the index.html file, press ctrl+shift+i and see in the console how some tests are failing. At the open panel, choose the Sources tab.
+
+Chrome developer tools
+
+Does this code look familiar? It is based on the exercises you did in the previous chapter. Do you remember that moment when you were absolutely sure that your function should work, but you just kept getting false when you were expecting to see true? Using the debugger will help you identify where and why a piece of code is failing so that you can fix it.
+
+Press ctrl+o and select debugging.js. In the console, you will see that we have several logs of false and we want those to be true. Locate the piece that's failing in the code explorer by clicking on the line indicated on the right, next to where it says false. You can also press ctrl+f to search inside files.
+
+You will be taken to to that part of the code and the line will be momentarily highlighted in yellow. Click on the number of the line (in this example, 35) and you should see a blue tag appear. 
+
+Congratulations, you have put your first breakpoint and you will start to debug shortly.
+
+Breakpoints
+
+A breakpoint is a mark for a line in the source code telling the debugger to stop before executing the instructions where the breakpoint is placed. Once you have placed the breakpoint, refresh the page by pressing F5. Next time the program runs it will stop just before executing line 35. After placing a breakpoint we can use debugger controls:
+
+advance the execution step by step (F10)
+resume execution (F11)
+enter a function call (F11).
+Alternatively, use the buttons in the debugger, as shown below (#3 in the image). Let's enter into console.log( dniLetter( 12345678 ) === 'Z'): click on the source view and press F11 or click on the down-arrow (the third button).
+
+
+
+You will be transported to line 21, where we set the first variable in the function.
+
+The Call Stack View
+
+When calling a function from another, the new called function is added to a function stack. When the function ends its execution, the function is removed from the stack. This stack can be inspected and used to revisit any of the functions at any time in the debugging session. The topmost entry in the call stack view represents the current execution cursor. Descending through the stack is going back to the calling functions. In our case, the dniLetter() function is being called by an anonymous function, which is the console.log().
+
+Variable inspector
+
+Just below the call stack and closely related, there is the variable inspector when you can control the content of variables or custom expressions. The Scope variable tab shows the variables that can be accessed from the current execution point. They are classified into locals for variables declared inside the present function and Global for those in the window object.
+
+Notice how lockup, num and result are all undefined while parameterdni and the special variable this have been properly set by JavaScript during the function call. IF you advance one step (press F10), lockup will be initialized with TRWAGMYFPDXBNJZSQVHLCKE and another step (again, F10) will set the result variable as an empty string, and so on as you click through the lines. Until you get to line 36, the next function call.
+
+Watch expressions
+
+Now you're paused before entering the dniLetter function. For debugging you should able to foresee what the code will do in order to check if the current behaviour matches your expectation. In this case, given a dni of 34667892, we expect the result to be ‘S’. After entering the function, we can add result to the list of Watch Expressions (click on the + sign). Stepping through the code, we expect to see the value of result go from undefined to ‘’ to ‘S’.
+
+You will notice something weird: it did not change to ‘S’. What happened here?
+
+In-code inspector
+
+Resume the execution (press F8) and refresh the page (F5). When stopping in line 35 again, put your cursor over the dniLetter function call and inspect the code. Try to understand what each line is doing and exactly when the result variable should be set as S, and why that is not happening. Once you find the mistake, fix it and run the code again. You should see some changes in your console!
+
+The debugger command
+
+There’s still one false in that list that we expect to be true.
+
+JavaScript allows us to enter programmatic breakpoints by using the debugger statement. Now open debugging.js in a code editor and look for that test. Write debugger; in the line before.
+
+console.log( dniLetter( -1 ) === 'Invalid parameter');
+debugger;
+console.log( dniLetter( "A1234567" ) === 'Invalid parmeter');
+For the debugger command to work it is very important the debugger is already open in your browser.
+
+Now refresh the page to run the tests again and the execution will stop just when reaching the debugger instruction. This command is very useful for those bugs that can prevent you from stopping the execution when desired. They can be put inside an if statement to make them conditionals. Remember to delete the debugger statement when you’re done debugging!
+
+
+
+Try to debug this example on your own.
+
+Using the console with the debugger
+
+One of the cool things about the debugger is that once it’s stopped, either with a breakpoint or with the debugger statement, you can open a console and play with the variables and functions. With the debugger open, hit the Escape key to open the console. Now you can type in the name of variables or functions to examine them, or even execute functions in the console. Whatever you do in the console will be reset when you refresh the page.
+
+In the next two exercises, use the debugging tools you have just learned to check and fix your code. It might seem like extra work at first, but in the long run this will speed up your development.

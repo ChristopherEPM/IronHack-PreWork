@@ -1,0 +1,127 @@
+Quiz Time!
+
+In this exercise, you’re not taking a quiz, you’re making one!
+
+The quiz will have five questions and at the end of the quiz, the program will calculate the responses and provide the result.
+
+Ready? Let's get started. Open a new file in Sublime Text called index.html and copy this text into it:
+
+<DOCTYPE html>
+<html>
+  <head>
+    <title>My JS Quiz</title>
+    <meta charset="utf-8"/>
+    <script defer type="text/javascript" src="quiz.js"></script>
+  </head>
+  <body>
+  </body>
+</html>
+Now open another file and call it quiz.js. Save both files (in the same folder) and open the index.html file in Chrome.
+
+What’s your name?
+
+Ok we’re all set up, let’s make our first question. Type this into your quiz.js file, save it, and refresh the page in the browser.
+
+var name = prompt('What is your name?')
+Excellent, you have a name! But for now, the user’s response is only saved in the variable name. We will be asking more questions and we will want to collect the answers together. Create an array to store responses to the quiz questions so we can calculate the totals later. Create an object called user where you will store information about your user, starting with name.
+
+Here’s what that should look like:
+
+var user = {}
+var responses = []
+Yes, just an empty object and an empty array. Now, delete this line:
+
+var name = prompt('What is your name?')
+And instead, write a function that will ask for the user’s name and save the answer in the user object.
+
+Here’s one way to do it:
+
+function question1() {
+  var name = prompt('What is your name?')
+  user.name = name
+}
+
+question1(); // don’t forget to call the function!
+Open your console and run this code in the browser (save the file and refresh the page). After you enter your name into the prompt, if you type user; into the console, you should see an object that contains the key name and your name as the value.
+
+True or False
+
+Next step: write a quiz question. Here are some guidelines:
+
+the question should have a Yes or No answer
+use an if then else statement to convert the user’s answer into Boolean values of true or false for storing whether the answer was right or wrong.
+save the true or false answer as a new key/value pair in the responses object, just like you did with the name
+Here’s an example to work from if you get stuck:
+
+function question2() {
+
+  var firstQuestion = prompt('Does null === 0 ? (Yes or No)')
+
+// why do you need to convert the answer to lowercase?
+  if (firstQuestion.toLowerCase() === 'yes') {
+    firstQuestion = true
+  } else if (firstQuestion.toLowerCase() === 'no') {
+    firstQuestion = false
+  } else {
+// what if the user writes something other than yes or no? 
+// they will have to answer the question again
+    alert("Please answer either Yes or No");
+    return question2();
+  }
+  responses.push(firstQuestion); // add the true or false value to the responses array
+}
+
+question2();
+Multiple Choice
+
+Now, write a multiple choice question. Since the prompt function only allows text answers, the options should be included in the question and the user will type in their response. A few guidelines:
+
+give at least three options
+convert the answer to lowercase
+use a switch statement to mark their answer as either true or false
+provide a default case in the switch statement
+save the result in the responses object
+function question3() {
+  var js = prompt('What was the original name for JavaScript: Java, LiveScript, JavaLive, or ScriptyScript?');
+  js = js.toLowerCase();
+  switch (js) {
+    // your own answers
+  }
+}
+
+question3();
+Some more questions
+
+Okay it’s your turn to get creative! Write (at least) two more questions for the quiz. A few tips:
+
+try to use a variety of the concepts we’ve learned
+keep testing your code in the browser
+don’t be afraid of error messages, just read them and keep trying
+remember that the prompt method always returns a string
+it’s not enough to just write the functions, you must also call them
+Evaluate and display the results
+
+Finally, write a function to report the user’s results.
+
+the function should accept the responses array as a parameter, then loop through the array and count how many are correct answers (true) and how many are incorrect (false)
+save the totals for correct and incorrect answers in the user array
+use console.log() or alert() to display a message to the user with their name, the number of correct answers, and the number of incorrect answers
+function evaluate(responsesArray) {
+
+// declare two variables to store the totals
+
+// populate the “totals” variables from the “responsesArray”
+
+// save the “totals” variables inside the user object
+
+// call showResults
+}
+
+function showResults() {
+
+// display the user results
+
+}
+
+// call the function, passing it the responses array
+evaluate(responses);
